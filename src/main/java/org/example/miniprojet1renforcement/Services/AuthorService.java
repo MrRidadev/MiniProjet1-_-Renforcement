@@ -5,6 +5,7 @@ import org.example.miniprojet1renforcement.Repository.AuthorRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class AuthorService {
@@ -24,7 +25,7 @@ public class AuthorService {
         return authorRepository.findAll();
     }
 
-    public Author getAuthorById(int id) {
-        return authorRepository.findById(id)
+    public Optional<Author> getAuthorById(Long id) {
+        return authorRepository.findById(id);
     }
 }

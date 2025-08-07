@@ -6,6 +6,7 @@ import org.example.miniprojet1renforcement.Services.AuthorService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RequestMapping("/author")
 @RestController
@@ -28,8 +29,8 @@ public class AuthorController {
         return authorService.getAllAuthors();
     }
 
-    @GetMapping("/getByIdAuthor")
-    public Author getByIdAuthor(@RequestParam int id) {
+    @GetMapping("/{id}")
+    public Optional<Author> getByIdAuthor(@PathVariable Long id) {
         return authorService.getAuthorById(id);
     }
 
