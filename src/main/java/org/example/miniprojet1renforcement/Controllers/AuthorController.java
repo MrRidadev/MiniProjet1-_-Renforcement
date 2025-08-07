@@ -27,4 +27,10 @@ public class AuthorController {
     public List<Author> getAllAuthor() {
         return authorService.getAllAuthors();
     }
+
+    @GetMapping("/getByIdAuthor")
+    public Author getByIdAuthor(@RequestParam int id) {
+        return authorService.getAuthorById(id);
+    }
+
 }
