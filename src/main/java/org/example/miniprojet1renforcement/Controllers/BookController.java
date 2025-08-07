@@ -22,11 +22,11 @@ public class BookController {
     public List<Book> getAllBook() {
         return bookService.getAllBooks();
     }
-    @GetMapping("/getById")
+    @GetMapping("/getById/{id}")
     public Optional<Book> getBookById(@PathVariable Long id) {
         return bookService.getBookById(id);
     }
-    @GetMapping("addBook")
+    @PostMapping("addBook")
     public Book addBook(@RequestBody Book book) {
         return bookService.addBook(book);
     }
